@@ -1,0 +1,174 @@
+{
+  "meta": {
+    "team": "Portugal",
+    "tournament": "FIFA World Cup 2026",
+    "host": "USA · Canada · Mexico",
+    "window": "June – July 2026",
+    "manager": "Roberto Martínez",
+    "formation": "4-3-3",
+    "verdict": "Dark Horse turned Genuine Contender",
+    "recent_honor": "UEFA Nations League 2025 Champions",
+    "source": "Calcio Analysis Company — Portugal WC 2026 Squad Report"
+  },
+  "starting_xi": {
+    "GK": ["Diogo Costa"],
+    "DEF": ["Nuno Mendes", "Rúben Dias", "Gonçalo Inácio", "Matheus Nunes"],
+    "MID": ["Vitinha", "Bruno Fernandes", "Bernardo Silva"],
+    "ATT": ["Rafael Leão", "Cristiano Ronaldo", "Francisco Conceição"]
+  },
+  "strengths": [
+    "Elite midfield trio of Vitinha, Bruno Fernandes & Bernardo Silva capable of dominating possession",
+    "World-class left flank: Nuno Mendes (LB) + Rafael Leão (LW) is arguably the best combination in the tournament",
+    "Ronaldo's leadership and goalscoring — even at 41 — remains a decisive factor",
+    "Deep attacking pool with Francisco Conceição, Pedro Neto & Gonçalo Ramos offering quality rotation"
+  ],
+  "risks": [
+    "Emotional weight of Diogo Jota's tragic passing — motivational but psychologically demanding",
+    "Ronaldo's age and physical decline may limit his effectiveness across multiple knockout games",
+    "Depth at right-back less convincing than other positions"
+  ],
+  "jota": {
+    "name": "Diogo Jota",
+    "age": 28,
+    "tribute": "A Premier League champion with Liverpool and a Nations League winner with Portugal, Jota was among the most complete forwards in European football — his movement, pressing and goalscoring instincts made him a key figure in both shirts. His absence creates a genuine gap at the World Cup, not just tactically, but emotionally.",
+    "epitaph": "Portugal's squad will carry his memory into every game."
+  },
+  "verdict_long": "Portugal enter the 2026 World Cup with a squad genuinely capable of winning the tournament. Attacking depth is world-class, midfield is among the best at the competition, and defensive structure — built around Dias and Inácio — is solid and well-organised. The central question is not whether Portugal have the quality — they do — but whether Roberto Martínez can manage the emotional weight of the campaign, the minutes of an aging captain, and the tactical flexibility required to navigate knockout football against elite opponents.",
+  "players": [
+    {
+      "name": "Diogo Costa", "position": "GK", "club": "Porto", "age": 25, "starter": true,
+      "profile": "Portugal's undisputed No.1, Costa is one of the best shot-stoppers in European football. His composure, distribution accuracy and aerial dominance make him a modern sweeper-keeper. He was instrumental in Portugal's Nations League 2025 title run.",
+      "wc_impact": "Expected starter for all games. His ability to play out from the back supports Portugal's possession-based system. A penalty-shoot-out specialist — a potentially decisive weapon in knockout stages."
+    },
+    {
+      "name": "José Sá", "position": "GK", "club": "Wolverhampton Wanderers", "age": 31, "starter": false,
+      "profile": "One of the Premier League's most consistent goalkeepers over the past three seasons. Sá brings experience and shot-stopping quality. A reliable backup who could feature in early group games if needed.",
+      "wc_impact": "Trusted second choice. Could start in low-risk group stage fixtures to keep Costa fresh."
+    },
+    {
+      "name": "Rui Silva", "position": "GK", "club": "Sporting CP", "age": 32, "starter": false,
+      "profile": "Highly experienced goalkeeper who has consistently performed at club and international level. Known for strong positioning, reliable shot-stopping, and composure under pressure.",
+      "wc_impact": "Experienced backup to Diogo Costa. Provides valuable depth and security in goal — calmness and professionalism if called upon."
+    },
+    {
+      "name": "Ricardo Velho", "position": "GK", "club": "Farense", "age": 28, "starter": false,
+      "profile": "Third-choice goalkeeper bringing Liga Portugal experience to the camp.",
+      "wc_impact": "Unlikely to feature on the pitch but adds technical depth in training."
+    },
+    {
+      "name": "Nuno Mendes", "position": "DEF", "club": "PSG", "age": 22, "starter": true,
+      "profile": "Arguably the best left-back in world football right now. Enjoyed a standout 2024-25 campaign, contributing decisively to PSG's Ligue 1 treble and Portugal's Nations League title. Pace, defensive intensity and overlapping runs make him a dual threat.",
+      "wc_impact": "One of Portugal's most important players. His combination with Rafael Leão on the left creates a near-unstoppable attacking channel. Central to Portugal's attacking transitions in every match."
+    },
+    {
+      "name": "Rúben Dias", "position": "DEF", "club": "Manchester City", "age": 27, "starter": true,
+      "profile": "Captain of Manchester City's backline and cornerstone of Portugal's defence for years. Brings leadership, reading of the game, aerial dominance and composure under pressure. Despite City's difficult 2024-25 season, his individual quality has remained elite.",
+      "wc_impact": "First-choice CB and likely defensive captain on the pitch. His leadership stabilises the backline — one of the best defenders entering the tournament."
+    },
+    {
+      "name": "Gonçalo Inácio", "position": "DEF", "club": "Sporting CP", "age": 23, "starter": true,
+      "profile": "The younger partner to Dias, Inácio has developed rapidly into a world-class centre-back. His left-footedness and ability to carry the ball out from defence adds an extra dimension to Portugal's build-up play.",
+      "wc_impact": "Expected to start alongside Dias in every game. A key part of Portugal's long-term defensive project — this WC is his coming-out party on the global stage."
+    },
+    {
+      "name": "Matheus Nunes", "position": "DEF", "club": "Manchester City", "age": 26, "starter": true,
+      "profile": "A versatile player used primarily at right-back under Pep Guardiola at City, despite not being a natural full-back. His midfield qualities bring an extra dimension going forward.",
+      "wc_impact": "Likely starter at right-back in Martínez's setup. His ability to link with midfield helps Portugal maintain shape in possession phases."
+    },
+    {
+      "name": "Diogo Dalot", "position": "DEF", "club": "Manchester United", "age": 25, "starter": false,
+      "profile": "One of United's few consistent performers under Michael Carrick. An energetic right-back with strong delivery and defensive discipline.",
+      "wc_impact": "Strong competition for Matheus Nunes at right-back. Could start depending on tactical setup or be a reliable rotational option."
+    },
+    {
+      "name": "Nélson Semedo", "position": "DEF", "club": "Fenerbahçe", "age": 32, "starter": false,
+      "profile": "One of the most experienced defenders in the squad. Over a decade of top-level football across Benfica, Barcelona, Wolves and Fenerbahçe. Pace, defensive recovery, and ability to support attacks from wide areas.",
+      "wc_impact": "Important rotational role. Experience, defensive discipline and versatility make him valuable in group and knockout matches against fast wingers."
+    },
+    {
+      "name": "João Cancelo", "position": "DEF", "club": "Barcelona", "age": 31, "starter": false,
+      "profile": "A versatile, technically gifted full-back who has rediscovered form at Barcelona. Known for inverted runs, creative link-up play and delivery.",
+      "wc_impact": "Key squad depth — could provide tactical flexibility as a false full-back in specific matchups. Top-level experience is invaluable."
+    },
+    {
+      "name": "Renato Veiga", "position": "DEF", "club": "Villarreal", "age": 22, "starter": false,
+      "profile": "One of Portugal's most promising young defenders. Capable of playing as a centre-back, left-back, or defensive midfielder — combines physicality, aerial ability and progressive passing with maturity beyond his years.",
+      "wc_impact": "Important supporting role across multiple positions. His versatility gives Martínez tactical flexibility."
+    },
+    {
+      "name": "Tomás Araújo", "position": "DEF", "club": "Benfica", "age": 23, "starter": false,
+      "profile": "Composed young centre-back coming off strong Primeira Liga and European seasons at Benfica.",
+      "wc_impact": "Depth piece behind Dias and Inácio. Could feature in low-stakes group games."
+    },
+    {
+      "name": "Vitinha", "position": "MID", "club": "PSG", "age": 24, "starter": true,
+      "profile": "One of the best midfielders in Europe right now. His ability to combine pressing intensity with pinpoint short passing and spatial intelligence was central to PSG's 2024-25 treble. The engine of Portugal's midfield.",
+      "wc_impact": "Likely the most important midfielder for Portugal's system. His pressing triggers defensive transitions, his positional play controls game tempo. A key player to watch."
+    },
+    {
+      "name": "Bruno Fernandes", "position": "MID", "club": "Manchester United", "age": 31, "starter": true,
+      "profile": "Portugal's captain and creative heartbeat. Consistently brilliant regardless of United's struggles — pressing, long-range passing, set-piece delivery and goals from midfield make him irreplaceable. Leadership as vital as his technical contributions.",
+      "wc_impact": "Expected top performer. Responsible for the team's pressing structure and the link between midfield and attack. A Player of the Tournament candidate if Portugal go deep."
+    },
+    {
+      "name": "Bernardo Silva", "position": "MID", "club": "Manchester City", "age": 31, "starter": true,
+      "profile": "One of the most intelligent footballers of his generation. Ability to operate across multiple midfield positions, press relentlessly and contribute both goals and assists makes him uniquely flexible.",
+      "wc_impact": "Could play as third midfielder, a free eight, or wider attacker. His versatility is a tactical weapon for the manager."
+    },
+    {
+      "name": "João Neves", "position": "MID", "club": "PSG", "age": 21, "starter": false,
+      "profile": "Among the most exciting young midfielders in European football. Since arriving at PSG, has developed rapidly into a composed, high-intensity midfielder capable of both protecting the defence and driving forward.",
+      "wc_impact": "Competing with Rúben Neves for the holding midfield role. More likely starter or impact substitute — but ceiling is elite, could be decisive in tight knockout games."
+    },
+    {
+      "name": "Rúben Neves", "position": "MID", "club": "Al Hilal", "age": 29, "starter": false,
+      "profile": "The most pure defensive midfielder in the squad. Excels at disrupting opposition build-up, winning duels and protecting the defensive line. His directness and aggression complement the technical quality around him.",
+      "wc_impact": "May not be a headline name, but could be one of the tournament's most important squad players. When Portugal need control and defensive protection, Martínez will rely on him heavily."
+    },
+    {
+      "name": "Samuel Costa", "position": "MID", "club": "Mallorca", "age": 25, "starter": false,
+      "profile": "A surprise inclusion representing the next generation of Portuguese midfielders. La Liga consistency — work rate, defensive intensity, tactical discipline. Primarily a defensive midfielder, also capable as a box-to-box.",
+      "wc_impact": "Reflects Martínez's desire for midfield balance. Offers defensive security and energy that could be crucial in tournament football."
+    },
+    {
+      "name": "Cristiano Ronaldo", "position": "ATT", "club": "Al Nassr", "age": 41, "starter": true,
+      "profile": "The greatest goalscorer in international football history. Top scorer of the 2025 Nations League at age 40 — exceptional finishing, aerial presence and big-game mentality remain. The World Cup represents his final, defining opportunity to complete his legacy.",
+      "wc_impact": "The emotional and symbolic leader of Portugal's campaign. Martínez will manage his minutes carefully across the group stage to preserve him for the knockouts. His presence alone changes opposition defensive structures."
+    },
+    {
+      "name": "Rafael Leão", "position": "ATT", "club": "AC Milan", "age": 26, "starter": true,
+      "profile": "One of the most dangerous attackers in Serie A. Combines blistering acceleration, direct dribbling and creative finishing in a way few wingers in world football can match. His 2024-25 season at Milan was among his best.",
+      "wc_impact": "Expected starter on the left wing. His combination with Nuno Mendes makes Portugal's left side the most dangerous attacking corridor at the tournament."
+    },
+    {
+      "name": "Francisco Conceição", "position": "ATT", "club": "Juventus", "age": 23, "starter": true,
+      "profile": "Son of Sérgio Conceição. His Juventus performances — direct, unpredictable, technically sharp — have attracted attention across Europe. Excellent at cutting inside onto his stronger foot.",
+      "wc_impact": "Set to start on the right wing. His pace and directness stretches defences and creates space for Ronaldo and advancing midfielders. A breakout WC could launch him into the elite tier."
+    },
+    {
+      "name": "Gonçalo Ramos", "position": "ATT", "club": "PSG", "age": 23, "starter": false,
+      "profile": "An intelligent and mobile striker — excels at linking play, running in behind, and finishing in tight spaces. Already one of the best young strikers in Europe after his PSG career began to flourish.",
+      "wc_impact": "Primary backup to Ronaldo as the central striker. If Ronaldo is managed with minutes, Ramos starts key games. Distinctly different style — movement and link-up with midfield."
+    },
+    {
+      "name": "Francisco Trincão", "position": "ATT", "club": "Sporting CP", "age": 26, "starter": false,
+      "profile": "Has revitalised his career at Sporting after challenging spells at Barcelona and Wolves. A naturally left-footed winger who thrives cutting in from the right — creating chances, combining with teammates, or shooting from distance.",
+      "wc_impact": "Different profile from Conceição: more creativity, ball retention and combination play rather than direct dribbling. Particularly valuable against deep blocks."
+    },
+    {
+      "name": "Pedro Neto", "position": "ATT", "club": "Chelsea", "age": 25, "starter": false,
+      "profile": "A dynamic winger with exceptional acceleration, 1v1 ability and a sharp final ball. Consistent Premier League performances have shown he can be decisive at the highest level when fit.",
+      "wc_impact": "Strong rotational option on either flank. Provides pace-based impact from the bench, particularly effective as a counter-attacking weapon."
+    },
+    {
+      "name": "João Félix", "position": "ATT", "club": "Al Nassr", "age": 26, "starter": false,
+      "profile": "A uniquely gifted technician — fluid, creative, capable of moments of individual brilliance. The move to Al Nassr alongside Ronaldo has seen him rediscover consistency.",
+      "wc_impact": "More of an impact player than a regular starter. In games where Portugal need creativity against low blocks, Félix's ability to find space in tight areas could be decisive."
+    },
+    {
+      "name": "Gonçalo Guedes", "position": "ATT", "club": "Real Sociedad", "age": 29, "starter": false,
+      "profile": "A versatile and experienced attacker capable of playing on either wing, as a second striker, or through the centre. Combines pace, direct running and intelligent movement with a strong work ethic off the ball.",
+      "wc_impact": "Important rotational role — reliable option when Portugal need fresh energy, defensive work rate, or a tactical change. Can cover multiple positions."
+    }
+  ]
+}

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CAC_PIPELINE // Post 04 — Portugal Slides</title>
+<link rel="icon" type="image/svg+xml" href="logo.svg" />
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<style>
+  :root {
+    --red:#E42518; --green:#0D6938; --gold:#D3C084; --blue:#004595;
+    --black:#000000; --white:#FFFFFF; --paper:#F7F2E4;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#111;color:var(--white);font-family:'Courier New',ui-monospace,monospace}
+  .toolbar{position:sticky;top:0;z-index:50;background:#000;padding:10px 16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;border-bottom:2px solid var(--gold)}
+  .toolbar h1{margin:0;font-size:14px;letter-spacing:1px;flex:1}
+  .toolbar button,.toolbar select{background:var(--gold);color:var(--black);border:2px solid var(--black);padding:6px 12px;font-family:inherit;font-size:12px;cursor:pointer;font-weight:bold}
+  .toolbar label{font-size:11px}
+
+  .deck{padding:30px;display:flex;flex-direction:column;gap:30px;align-items:center}
+  .slide-wrap{position:relative;display:inline-block;transform-origin:top center}
+  .slide-wrap .meta-row{display:flex;justify-content:space-between;align-items:center;background:#000;color:var(--white);padding:6px 10px;font-size:12px;border:2px solid var(--gold)}
+  .slide-wrap .meta-row button{background:var(--gold);color:var(--black);border:1px solid var(--black);padding:4px 10px;cursor:pointer;font-family:inherit;font-weight:bold;font-size:11px}
+
+  .slide{width:1080px;height:1350px;background:var(--paper);color:var(--black);position:relative;overflow:hidden;padding:70px;border:4px solid var(--black)}
+  .slide .corner-tl{position:absolute;top:24px;left:24px;display:flex;gap:10px;align-items:center}
+  .slide .corner-tl img{height:50px}
+  .slide .corner-tl .tag{background:var(--green);color:var(--gold);padding:4px 10px;font-size:13px;letter-spacing:1px;border:2px solid var(--black)}
+  .slide .corner-tr{position:absolute;top:24px;right:24px;text-align:right;font-size:13px;letter-spacing:1px}
+  .slide .corner-bl{position:absolute;bottom:24px;left:24px;font-size:13px;letter-spacing:1px}
+  .slide .corner-br{position:absolute;bottom:24px;right:24px;font-size:13px;letter-spacing:1px}
+  .slide .swipe{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);background:var(--red);color:var(--white);padding:8px 18px;font-size:16px;letter-spacing:2px;border:2px solid var(--black)}
+
+  .slide h2{font-size:60px;line-height:1.05;margin:0 0 22px;letter-spacing:1px;text-transform:uppercase}
+  .slide h3{font-size:34px;line-height:1.1;margin:0 0 14px;letter-spacing:1px;text-transform:uppercase}
+  .slide p{font-size:24px;line-height:1.4;margin:0 0 16px}
+  .slide .tiny{font-size:17px;opacity:.8}
+  .slide .accent-red{color:var(--red)} .slide .accent-green{color:var(--green)} .slide .accent-blue{color:var(--blue)}
+
+  .box{background:var(--gold);border:4px solid var(--black);padding:20px 24px}
+  .box.red{background:var(--red);color:var(--white)}
+  .box.green{background:var(--green);color:var(--white)}
+  .box.blue{background:var(--blue);color:var(--white)}
+  .box.black{background:var(--black);color:var(--gold)}
+  .box.white{background:var(--white)}
+
+  table.t{width:100%;border-collapse:collapse;font-size:22px;background:var(--white);border:4px solid var(--black);table-layout:fixed}
+  table.t th{background:var(--black);color:var(--gold);padding:12px 14px;text-align:left;font-size:17px;letter-spacing:1px}
+  table.t th.r{text-align:right}
+  table.t td{padding:12px 14px;border-bottom:2px dashed var(--black)}
+  table.t tr:last-child td{border-bottom:0}
+  table.t td.r{text-align:right;font-weight:bold}
+
+  /* Pitch */
+  .pitch{
+    background:var(--green); border:4px solid var(--black);
+    position:relative; width: 720px; aspect-ratio: 7/10; margin: 0 auto;
+    color:var(--white);
+  }
+  .pitch::before{content:'';position:absolute;top:0;left:18%;right:18%;height:14%;border:2px solid rgba(255,255,255,.6)}
+  .pitch::after{content:'';position:absolute;bottom:0;left:18%;right:18%;height:14%;border:2px solid rgba(255,255,255,.6)}
+  .pitch .mid{position:absolute;top:50%;left:0;right:0;height:0;border-top:2px solid rgba(255,255,255,.6)}
+  .pitch .circle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:18%;aspect-ratio:1/1;border:2px solid rgba(255,255,255,.6);border-radius:50%}
+  .pl{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center}
+  .pl .num{width:54px;height:54px;border-radius:50%;background:var(--red);border:3px solid var(--black);display:flex;align-items:center;justify-content:center;font-weight:bold;color:var(--white);font-size:18px}
+  .pl .nm{background:var(--black);color:var(--gold);padding:2px 6px;font-size:13px;letter-spacing:.5px;border:1px solid var(--gold);white-space:nowrap;font-weight:bold}
+
+  /* Player avatar */
+  .av{width:80px;height:80px;border-radius:50%;border:3px solid var(--black);display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:28px;flex-shrink:0}
+  .av.GK{background:var(--gold);color:var(--black)}
+  .av.DEF{background:var(--blue);color:var(--white)}
+  .av.MID{background:var(--green);color:var(--white)}
+  .av.ATT{background:var(--red);color:var(--white)}
+
+  .center{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;text-align:center;gap:20px}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <h1>CAC_PIPELINE // POST 04 — PORTUGAL SLIDES (1080×1350)</h1>
+  <label>VIEW</label>
+  <select id="scaleSel">
+    <option value="0.35">35%</option><option value="0.5" selected>50%</option>
+    <option value="0.75">75%</option><option value="1">100%</option>
+  </select>
+  <label>EXPORT</label>
+  <select id="dpiSel">
+    <option value="2" selected>2x HD</option><option value="3">3x ULTRA</option><option value="1">1x</option>
+  </select>
+  <button id="dlAll">⬇ DOWNLOAD ALL</button>
+</div>
+
+<div class="deck" id="deck"></div>
+
+<script>
+const COL = { red:'#E42518', green:'#0D6938', gold:'#D3C084', blue:'#004595', black:'#000', paper:'#F7F2E4' };
+let D = null;
+
+async function load(){
+  D = await (await fetch('../data/squad.json')).json();
+  render();
+  document.getElementById('scaleSel').addEventListener('change', applyScale);
+  document.getElementById('dlAll').addEventListener('click', downloadAll);
+  applyScale();
+}
+function applyScale(){
+  const s = parseFloat(document.getElementById('scaleSel').value);
+  document.querySelectorAll('.slide-wrap').forEach(w => {
+    w.style.transform = `scale(${s})`;
+    w.style.marginBottom = `${(1350 + 50) * (s - 1)}px`;
+  });
+}
+function shell(n, total, body){
+  return `<div class="slide-wrap">
+    <div class="meta-row">
+      <span>SLIDE ${n} / ${total} — 1080×1350</span>
+      <button onclick="downloadOne(${n})">⬇ DOWNLOAD HD</button>
+    </div>
+    <div class="slide" id="slide-${n}">
+      <div class="corner-tl"><img src="logo.svg" alt="CAC"/><span class="tag">POST_04 · PORTUGAL</span></div>
+      <div class="corner-tr">CALCIOAC.COM</div>
+      ${body}
+    </div>
+  </div>`;
+}
+function initials(name){ return name.split(' ').map(w=>w[0]).slice(0,2).join('').toUpperCase(); }
+function avCard(p, w=80){
+  return `<div class="av ${p.position}" style="width:${w}px; height:${w}px; font-size:${w*0.35}px;">${initials(p.name)}</div>`;
+}
+
+function render(){
+  const TOTAL = 10;
+  const slides = [];
+
+  // 1 COVER
+  slides.push(shell(1, TOTAL, `
+    <div class="center">
+      <div style="font-size:200px; line-height:1; margin-bottom:0;">🇵🇹</div>
+      <h2 style="font-size:72px;">PORTUGAL</h2>
+      <h3 style="font-size:32px; color:var(--green); margin-top:-10px;">FIFA WORLD CUP 2026</h3>
+      <p style="font-size:24px; max-width:780px; margin-top:20px;">USA · CANADA · MEXICO<br>June – July 2026</p>
+      <div class="box red" style="margin-top:30px;"><b style="font-size:32px;">DARK HORSE → CONTENDER</b></div>
+      <p class="tiny" style="margin-top:24px;">26-man squad report · CAC Football Intelligence</p>
+    </div>
+    <div class="swipe">SWIPE →</div>
+  `));
+
+  // 2 PREDICTED XI ON PITCH
+  const POS = {
+    'Diogo Costa':[50,92],'Nuno Mendes':[15,72],'Gonçalo Inácio':[37,78],
+    'Rúben Dias':[63,78],'Matheus Nunes':[85,72],'Vitinha':[25,50],
+    'Bruno Fernandes':[50,55],'Bernardo Silva':[75,50],'Rafael Leão':[15,25],
+    'Cristiano Ronaldo':[50,18],'Francisco Conceição':[85,25]
+  };
+  const NUM = {'Diogo Costa':22,'Nuno Mendes':19,'Gonçalo Inácio':5,'Rúben Dias':4,
+    'Matheus Nunes':14,'Vitinha':6,'Bruno Fernandes':8,'Bernardo Silva':10,
+    'Rafael Leão':17,'Cristiano Ronaldo':7,'Francisco Conceição':21};
+  const xiNames = Object.values(D.starting_xi).flat();
+  const pitchSpots = xiNames.map(n => {
+    const [x,y] = POS[n];
+    const last = n.split(' ').slice(-1)[0].toUpperCase();
+    return `<div class="pl" style="left:${x}%; top:${y}%;">
+      <div class="num">${NUM[n]||'?'}</div><div class="nm">${last}</div>
+    </div>`;
+  }).join('');
+  slides.push(shell(2, TOTAL, `
+    <h2>THE PREDICTED XI</h2>
+    <p>Roberto Martínez · 4-3-3 · high press, wide pace, midfield control.</p>
+    <div class="pitch"><span class="mid"></span><span class="circle"></span>${pitchSpots}</div>
+  `));
+
+  // 3 KEY STRENGTHS
+  slides.push(shell(3, TOTAL, `
+    <h2 class="accent-green">KEY STRENGTHS</h2>
+    ${D.strengths.map((s,i) => `
+      <div class="box green" style="margin-top:14px;">
+        <p style="font-size:22px; margin:0;"><b style="color:var(--gold)">${String(i+1).padStart(2,'0')}</b> &nbsp; ${s}</p>
+      </div>`).join('')}
+  `));
+
+  // 4 KEY RISKS
+  slides.push(shell(4, TOTAL, `
+    <h2 class="accent-red">KEY RISKS</h2>
+    ${D.risks.map((s,i) => `
+      <div class="box red" style="margin-top:16px;">
+        <p style="font-size:22px; margin:0;"><b style="color:var(--gold)">${String(i+1).padStart(2,'0')}</b> &nbsp; ${s}</p>
+      </div>`).join('')}
+  `));
+
+  // 5 THE LEFT SIDE — Mendes + Leão
+  const mendes = D.players.find(p=>p.name==='Nuno Mendes');
+  const leao   = D.players.find(p=>p.name==='Rafael Leão');
+  slides.push(shell(5, TOTAL, `
+    <h2>THE LEFT SIDE</h2>
+    <p>Arguably the best attacking channel at the entire tournament.</p>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:30px;">
+      ${[mendes, leao].map(p => `
+        <div class="box white" style="display:flex; flex-direction:column; align-items:center; text-align:center;">
+          ${avCard(p, 120)}
+          <h3 style="margin:14px 0 4px; font-size:26px;">${p.name}</h3>
+          <p style="font-size:17px; margin:0; opacity:.85;">${p.club} · Age ${p.age}</p>
+          <p style="font-size:17px; margin:14px 0 0; text-align:left; line-height:1.5;">${p.profile}</p>
+        </div>
+      `).join('')}
+    </div>
+    <div class="box black" style="margin-top:24px;">
+      <p style="margin:0; color:var(--gold); font-size:24px; text-align:center;"><b>"NEAR-UNSTOPPABLE ATTACKING CORRIDOR."</b></p>
+    </div>
+  `));
+
+  // 6 THE MIDFIELD TRIO
+  const vit = D.players.find(p=>p.name==='Vitinha');
+  const bf  = D.players.find(p=>p.name==='Bruno Fernandes');
+  const bs  = D.players.find(p=>p.name==='Bernardo Silva');
+  slides.push(shell(6, TOTAL, `
+    <h2>THE MIDFIELD TRIO</h2>
+    <p>Treble winner. Captain. Maestro. One of the deepest midfields at the WC.</p>
+    <div style="display:flex; flex-direction:column; gap:18px; margin-top:24px;">
+      ${[vit, bf, bs].map((p, i) => `
+        <div class="box ${i===0?'green':i===1?'red':'blue'}" style="display:flex; gap:18px; align-items:center;">
+          ${avCard(p, 90)}
+          <div style="flex:1; color:var(--white);">
+            <h3 style="margin:0; font-size:24px;">${p.name} <span style="opacity:.7; font-size:16px;">· ${p.club}</span></h3>
+            <p style="margin:6px 0 0; font-size:18px; line-height:1.4;">${p.profile.slice(0,210)}…</p>
+          </div>
+        </div>`).join('')}
+    </div>
+  `));
+
+  // 7 RONALDO AT 41
+  const cr = D.players.find(p=>p.name==='Cristiano Ronaldo');
+  slides.push(shell(7, TOTAL, `
+    <h2>RONALDO AT 41</h2>
+    <p>The greatest international goalscorer in football history. One last World Cup.</p>
+    <div style="display:flex; gap:24px; align-items:center; margin-top:30px;">
+      ${avCard(cr, 180)}
+      <div style="flex:1;">
+        <div class="box gold" style="background:var(--gold); border-color:var(--black);">
+          <p style="margin:0; font-size:24px;"><b>🏆 NATIONS LEAGUE 2025 GOLDEN BOOT</b></p>
+          <p style="margin:6px 0 0; font-size:18px;">Top scorer of the entire tournament at age 40.</p>
+        </div>
+      </div>
+    </div>
+    <div class="box red" style="margin-top:24px;">
+      <h3 style="margin:0 0 8px; color:var(--gold); font-size:22px;">THE OPEN QUESTION</h3>
+      <p style="margin:0; font-size:20px; line-height:1.5;">Can Martínez manage his minutes through the group stage to preserve him for the knockouts that actually matter? His presence alone changes opposition defensive structures — but the body has limits even his does not transcend.</p>
+    </div>
+  `));
+
+  // 8 IN MEMORIAM — JOTA
+  slides.push(shell(8, TOTAL, `
+    <div class="center" style="background:var(--black); color:var(--white); margin:-70px; padding:70px; height: calc(100% + 140px); width: calc(100% + 140px);">
+      <p style="color:var(--red); font-size:32px; margin:0;">♥</p>
+      <h2 style="color:var(--gold); font-size:28px; margin:10px 0;">IN MEMORIAM</h2>
+      <h3 style="font-size:64px; color:var(--white); margin:20px 0 4px;">${D.jota.name}</h3>
+      <p style="color:var(--gold); margin:0; font-size:22px;">1996 — 2025</p>
+      <p style="max-width:780px; font-size:22px; line-height:1.55; margin-top:30px;">${D.jota.tribute}</p>
+      <p style="color:var(--gold); font-style:italic; font-size:22px; margin-top:24px; border-left:3px solid var(--red); padding-left:16px; max-width:680px;">${D.jota.epitaph}</p>
+    </div>
+  `));
+
+  // 9 THE VERDICT
+  slides.push(shell(9, TOTAL, `
+    <h2>THE VERDICT</h2>
+    <p style="font-size:22px;">${D.verdict_long.slice(0, 380)}…</p>
+    <div class="box red" style="margin-top:24px;">
+      <p style="margin:0; font-size:26px; color:var(--gold);"><b>IF VITINHA, BRUNO, AND LEÃO FIRE SIMULTANEOUSLY —<br>AND RONALDO DELIVERS IN THE BIGGEST MOMENTS —</b></p>
+      <p style="margin:14px 0 0; font-size:32px; text-align:center;"><b>PORTUGAL HAVE THE SQUAD<br>TO LIFT THE TROPHY.</b></p>
+    </div>
+    <div class="box green" style="margin-top:18px; text-align:center;">
+      <p style="margin:0; font-size:30px;"><b style="color:var(--gold)">CAC VERDICT: DARK HORSE → GENUINE CONTENDER</b></p>
+    </div>
+  `));
+
+  // 10 CTA
+  slides.push(shell(10, TOTAL, `
+    <div class="center">
+      <h2 style="font-size:60px;">EXPLORE THE FULL</h2>
+      <h2 style="font-size:60px; color:var(--red);">26-MAN REPORT.</h2>
+      <p style="font-size:28px; margin-top:24px;">Tap any player on the pitch →<br>Profile · World Cup Impact · Starter status.</p>
+      <div class="box" style="margin-top:30px; font-size:28px;"><b>CALCIO-AC.GITHUB.IO/CAC_POST4</b></div>
+      <p style="font-size:22px; margin-top:30px;">link in bio · CALCIOAC.COM</p>
+    </div>
+    <div class="corner-bl">FOLLOW @CALCIO.AC</div>
+  `));
+
+  document.getElementById('deck').innerHTML = slides.join('');
+}
+
+async function downloadOne(n){
+  const node = document.getElementById('slide-'+n);
+  const dpi = parseFloat(document.getElementById('dpiSel').value);
+  const wrap = node.closest('.slide-wrap');
+  const pt = wrap.style.transform, pm = wrap.style.marginBottom;
+  wrap.style.transform = 'none'; wrap.style.marginBottom = '';
+  const canvas = await html2canvas(node, { scale: dpi, backgroundColor: COL.paper, useCORS:true, logging:false,
+    width:1080, height:1350, windowWidth:1080, windowHeight:1350 });
+  wrap.style.transform = pt; wrap.style.marginBottom = pm;
+  const a = document.createElement('a');
+  a.download = `CAC_post04_slide${String(n).padStart(2,'0')}_${dpi}x.png`;
+  a.href = canvas.toDataURL('image/png'); a.click();
+}
+async function downloadAll(){
+  const btn = document.getElementById('dlAll'); btn.disabled = true; const orig = btn.textContent;
+  for (let n=1; n<=10; n++) { btn.textContent = `EXPORTING ${n}/10…`; await downloadOne(n); await new Promise(r=>setTimeout(r,300)); }
+  btn.disabled = false; btn.textContent = orig;
+}
+load();
+</script>
+</body>
+</html>
