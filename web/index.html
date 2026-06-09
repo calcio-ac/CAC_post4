@@ -19,14 +19,15 @@
   html, body {
     margin: 0; padding: 0; background: var(--paper); color: var(--black);
     font-family: 'Courier New', ui-monospace, monospace;
+    font-size: 16px;
   }
   .wrap { max-width: 1200px; margin: 0 auto; padding: 24px; }
 
   /* Jota black ribbon */
   .ribbon {
     background: var(--black); color: var(--white);
-    text-align: center; padding: 8px 16px;
-    font-size: 12px; letter-spacing: 2px;
+    text-align: center; padding: 12px 16px;
+    font-size: 14px; letter-spacing: 2px; font-weight: bold;
     border-bottom: 4px solid var(--gold);
   }
   .ribbon .heart { color: var(--red); }
@@ -40,23 +41,23 @@
   header .brand { flex-shrink:0; }
   header .brand img { height: 56px; }
   header .meta { flex:1; min-width:0; }
-  header h1 { margin: 0; font-size: 24px; letter-spacing: 1px; text-transform: uppercase; }
-  header p  { margin: 6px 0 0; font-size: 13px; opacity: .9; }
-  .tag { display:inline-block; background: var(--black); color: var(--gold); padding: 2px 10px; margin-right:6px; font-size: 11px; text-decoration:none; }
+  header h1 { margin: 0; font-size: 26px; letter-spacing: 1px; text-transform: uppercase; line-height: 1.2; }
+  header p  { margin: 8px 0 0; font-size: 15px; opacity: .95; line-height: 1.4; }
+  .tag { display:inline-block; background: var(--black); color: var(--gold); padding: 4px 10px; margin-right:6px; font-size: 13px; text-decoration:none; font-weight: bold; }
   .tag.red  { background: var(--red); color: var(--white); }
   .tag.gold { background: var(--gold); color: var(--black); }
 
   .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 18px; }
-  .stat { background: var(--gold); border: 3px solid var(--black); padding: 12px; }
-  .stat .n { font-size: 22px; font-weight: bold; line-height: 1.1; }
-  .stat .l { font-size: 10px; text-transform: uppercase; margin-top:4px; }
+  .stat { background: var(--gold); border: 3px solid var(--black); padding: 14px; }
+  .stat .n { font-size: 24px; font-weight: bold; line-height: 1.1; }
+  .stat .l { font-size: 13px; text-transform: uppercase; margin-top: 6px; font-weight: bold; }
   .stat.red   { background: var(--red); color: var(--white); }
   .stat.green { background: var(--green); color: var(--white); }
   .stat.blue  { background: var(--blue); color: var(--white); }
 
   .panel { background: var(--white); border: 3px solid var(--black); margin-top: 18px; padding: 18px; }
-  .panel h2 { margin: 0 0 12px; font-size: 16px; letter-spacing: 1px; }
-  .panel p.small { font-size: 13px; margin: 0 0 10px; }
+  .panel h2 { margin: 0 0 12px; font-size: 18px; letter-spacing: 1px; }
+  .panel p.small { font-size: 15px; margin: 0 0 10px; line-height: 1.5; }
 
   /* ============ PITCH ============ */
   .pitch-wrap { margin-top: 8px; }
@@ -85,16 +86,16 @@
     text-align: center; cursor: pointer;
   }
   .pl-spot .num {
-    width: 48px; height: 48px; border-radius: 50%;
+    width: 54px; height: 54px; border-radius: 50%;
     background: var(--red); border: 3px solid var(--black);
     display:flex; align-items:center; justify-content:center;
-    font-weight: bold; color: var(--white); font-size: 16px;
+    font-weight: bold; color: var(--white); font-size: 20px;
     box-shadow: 0 3px 0 var(--black);
   }
   .pl-spot .nm {
     background: var(--black); color: var(--gold);
-    padding: 2px 6px; font-size: 11px; letter-spacing: .5px;
-    border: 1px solid var(--gold); white-space: nowrap;
+    padding: 3px 8px; font-size: 14px; letter-spacing: .5px;
+    border: 1px solid var(--gold); white-space: nowrap; font-weight: bold;
   }
   .pl-spot:hover .num { background: var(--gold); color: var(--black); }
 
@@ -102,47 +103,47 @@
   .filters { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 16px; }
   .filters button {
     background: var(--white); border: 2px solid var(--black);
-    padding: 6px 14px; font-family: inherit; font-weight: bold; font-size: 12px;
+    padding: 10px 18px; font-family: inherit; font-weight: bold; font-size: 15px;
     cursor: pointer; letter-spacing: 1px;
   }
   .filters button.active { background: var(--green); color: var(--white); }
   .filters button:hover { background: var(--gold); }
 
   .squad {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 12px;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
   }
   .card {
-    background: var(--white); border: 3px solid var(--black); padding: 12px;
-    display: flex; flex-direction: column; gap: 6px;
+    background: var(--white); border: 3px solid var(--black); padding: 14px;
+    display: flex; flex-direction: column; gap: 8px;
     transition: transform .1s;
     cursor: pointer;
   }
   .card:hover { transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--black); }
-  .card .top { display: flex; gap: 10px; align-items: center; }
+  .card .top { display: flex; gap: 12px; align-items: center; }
   .avatar {
-    width: 52px; height: 52px; border-radius: 50%;
+    width: 60px; height: 60px; border-radius: 50%;
     border: 3px solid var(--black);
     display: flex; align-items: center; justify-content: center;
-    font-weight: bold; font-size: 18px;
+    font-weight: bold; font-size: 20px;
     flex-shrink: 0;
   }
   .avatar.GK  { background: var(--gold);  color: var(--black); }
   .avatar.DEF { background: var(--blue);  color: var(--white); }
   .avatar.MID { background: var(--green); color: var(--white); }
   .avatar.ATT { background: var(--red);   color: var(--white); }
-  .card .name { font-weight: bold; font-size: 14px; line-height: 1.1; }
-  .card .meta { font-size: 11px; opacity: .8; }
+  .card .name { font-weight: bold; font-size: 17px; line-height: 1.15; }
+  .card .meta { font-size: 14px; opacity: .85; margin-top: 4px; }
   .card .pos-pill {
-    display: inline-block; padding: 2px 6px; font-size: 9px; font-weight: bold;
-    border: 1px solid var(--black); margin-left: 4px;
+    display: inline-block; padding: 3px 8px; font-size: 12px; font-weight: bold;
+    border: 1px solid var(--black); margin-left: 6px; letter-spacing: .5px;
   }
   .card .pos-pill.GK  { background: var(--gold); }
   .card .pos-pill.DEF { background: var(--blue);  color: var(--white); }
   .card .pos-pill.MID { background: var(--green); color: var(--white); }
   .card .pos-pill.ATT { background: var(--red);   color: var(--white); }
   .card .star {
-    position: absolute; top: 8px; right: 10px; font-size: 12px;
+    position: absolute; top: 10px; right: 12px; font-size: 14px;
     color: var(--red); font-weight: bold;
   }
   .card { position: relative; }
@@ -159,42 +160,81 @@
     max-width: 600px; width: 100%; max-height: 90vh; overflow-y: auto;
     padding: 24px;
   }
-  .modal h3 { margin: 0; font-size: 24px; }
+  .modal h3 { margin: 0; font-size: 26px; }
   .modal .closebtn {
     float: right; background: var(--red); color: var(--white);
-    border: 2px solid var(--black); padding: 4px 10px;
-    font-family: inherit; font-weight: bold; cursor: pointer;
+    border: 2px solid var(--black); padding: 8px 14px;
+    font-family: inherit; font-weight: bold; cursor: pointer; font-size: 14px;
   }
-  .modal .sub { font-size: 12px; opacity: .8; margin: 4px 0 14px; }
-  .modal .section { margin-top: 14px; }
-  .modal .section h4 { margin: 0 0 6px; font-size: 13px; letter-spacing: 1px; color: var(--red); }
-  .modal .section p { margin: 0; font-size: 14px; line-height: 1.5; }
+  .modal .sub { font-size: 15px; opacity: .85; margin: 6px 0 16px; font-weight: bold; }
+  .modal .section { margin-top: 18px; }
+  .modal .section h4 { margin: 0 0 8px; font-size: 16px; letter-spacing: 1px; color: var(--red); }
+  .modal .section p { margin: 0; font-size: 16px; line-height: 1.6; }
 
   /* ============ JOTA TRIBUTE ============ */
   .jota {
     background: var(--black); color: var(--white);
     border: 4px solid var(--gold); margin-top: 24px; padding: 22px;
   }
-  .jota h2 { margin: 0 0 12px; color: var(--gold); font-size: 18px; letter-spacing: 2px; }
-  .jota .name { font-size: 32px; font-weight: bold; letter-spacing: 1px; }
-  .jota .age { color: var(--gold); font-size: 14px; margin-bottom: 12px; }
-  .jota p { font-size: 14px; line-height: 1.55; }
-  .jota .epitaph { color: var(--gold); font-style: italic; margin-top: 12px; border-left: 3px solid var(--red); padding-left: 12px; }
+  .jota h2 { margin: 0 0 12px; color: var(--gold); font-size: 20px; letter-spacing: 2px; }
+  .jota .name { font-size: 36px; font-weight: bold; letter-spacing: 1px; }
+  .jota .age { color: var(--gold); font-size: 16px; margin-bottom: 14px; font-weight: bold; }
+  .jota p { font-size: 16px; line-height: 1.6; }
+  .jota .epitaph { color: var(--gold); font-style: italic; margin-top: 14px; border-left: 3px solid var(--red); padding-left: 14px; font-size: 17px; }
 
   /* ============ STRENGTHS / RISKS ============ */
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; }
-  .swot ul { margin: 0; padding-left: 18px; font-size: 13px; line-height: 1.6; }
+  .swot ul { margin: 0; padding-left: 20px; font-size: 16px; line-height: 1.7; }
+  .swot ul li { margin-bottom: 8px; }
   .swot.s { background: var(--green); color: var(--white); border-color: var(--black); }
   .swot.r { background: var(--red);   color: var(--white); border-color: var(--black); }
   .swot.s h2 { color: var(--gold); }
   .swot.r h2 { color: var(--gold); }
 
-  footer { font-size: 11px; text-align:center; margin: 24px 0 8px; }
+  footer { font-size: 13px; text-align:center; margin: 24px 0 8px; }
   footer a { color: var(--black); }
 
+  /* ============ MOBILE — bump everything one tier up for readability ============ */
   @media (max-width: 720px) {
+    body { font-size: 17px; }
+    .wrap { padding: 14px; }
     .grid { grid-template-columns: repeat(2, 1fr); }
     .two-col { grid-template-columns: 1fr; }
+    .ribbon { font-size: 13px; padding: 10px 12px; letter-spacing: 1px; }
+    header { padding: 16px; flex-wrap: wrap; }
+    header h1 { font-size: 22px; }
+    header p { font-size: 14px; }
+    header .brand img { height: 44px; }
+    .tag { font-size: 12px; padding: 4px 8px; }
+    .stat .n { font-size: 20px; }
+    .stat .l { font-size: 11px; }
+    .panel { padding: 14px; }
+    .panel h2 { font-size: 17px; }
+    .panel p.small { font-size: 15px; }
+    .filters button { padding: 10px 14px; font-size: 14px; }
+    .squad { grid-template-columns: 1fr; gap: 12px; }
+    .card { padding: 14px; }
+    .card .name { font-size: 18px; }
+    .card .meta { font-size: 14px; }
+    .card .pos-pill { font-size: 12px; }
+    .avatar { width: 60px; height: 60px; font-size: 22px; }
+    .modal { padding: 18px; }
+    .modal h3 { font-size: 24px; }
+    .modal .sub { font-size: 14px; }
+    .modal .section h4 { font-size: 16px; }
+    .modal .section p { font-size: 16px; line-height: 1.6; }
+    .jota { padding: 18px; }
+    .jota .name { font-size: 30px; }
+    .jota p { font-size: 16px; }
+    .swot ul { font-size: 16px; }
+    .pl-spot .num { width: 42px; height: 42px; font-size: 16px; }
+    .pl-spot .nm { font-size: 11px; padding: 2px 6px; }
+  }
+  @media (max-width: 420px) {
+    .grid { grid-template-columns: 1fr; }
+    header h1 { font-size: 20px; }
+    .stat .n { font-size: 22px; }
+    .stat .l { font-size: 12px; }
   }
 </style>
 </head>
@@ -257,8 +297,8 @@
 
   <div class="panel">
     <h2>&gt; VERDICT</h2>
-    <p id="verdictLong" style="font-size:14px; line-height:1.6;"></p>
-    <div style="margin-top:14px; background: var(--gold); border:3px solid var(--black); padding:14px; font-weight:bold; font-size:16px; text-align:center;">
+    <p id="verdictLong" style="font-size:16px; line-height:1.6;"></p>
+    <div style="margin-top:16px; background: var(--gold); border:3px solid var(--black); padding:18px; font-weight:bold; font-size:20px; text-align:center; letter-spacing: 1px;">
       <span id="verdictShort"></span>
     </div>
   </div>
